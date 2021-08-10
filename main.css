@@ -1,0 +1,112 @@
+*{
+    margin: 0;
+    padding: 0;;
+}
+body{
+    text-align: center;
+}
+.wrapper{
+    width: 1170px;
+    margin: 0 auto;
+}
+header{
+    height: 100px;
+    background: rgb(11, 37, 53);
+    width:100%;
+    z-index: 2;
+    position: fixed;
+
+}
+.logo{
+    width: 30%;
+    float: left;
+    line-height: 100px;
+}
+.logo a{
+    text-decoration: none;
+    font-size: 30px;
+    font-family: cursive;
+    color: ghostwhite;
+    letter-spacing: 3px;
+}
+nav{
+    float: right;
+    line-height: 100px;
+}
+nav a{
+    text-decoration: none;
+    font-family: sans-serif;
+    letter-spacing: 1px;
+    font-size: 20px;
+    margin: 0 12px;
+    color:ghostwhite;
+}
+
+/* Title banner */
+
+.banner-area{
+    width: 100%;
+    height: 200px;
+    position: relative;
+    top: 100px;
+    background-image: url(img2.jpg);
+    background-size: cover;
+    background-position: center;
+}
+.banner-area h2{
+    padding-top: 6%;
+    font-size: 50px;
+    font-family: sans-serif;
+    color: rgb(243, 239, 235);
+}
+.content-area{
+    width: 100%;
+    position: relative;
+    top: 450px;
+    height: 1500px;
+}
+
+/* Footer */
+
+footer{
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+    background: rgb(35, 35, 53);
+}
+.main-content{
+    display: flex;
+}
+
+.main-content .box{
+    flex-basis: 50%;
+    padding: 10px 20px;
+    color: white;
+}
+.box h2{
+    font-size: 1.125rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+.box .content{
+    margin: 20px 0 0 0;
+}
+
+.left .content .social{
+    margin: 20px 0 0 0;
+    
+}
+
+.left .content .social a{
+    padding: 0 2px;
+    color: white;
+}
+.left .content .social a span{
+    height: 40px;
+    width: 40px;
+    line-height: 40px;
+    text-align: center;
+}
+.cpy{
+    color: white;
+}
