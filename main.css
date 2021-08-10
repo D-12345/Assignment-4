@@ -59,7 +59,8 @@ nav a{
     font-family: sans-serif;
     color: rgb(243, 239, 235);
 }
-.content-area{
+.container{
+    margin-top: 200px;
     width: 100%;
     position: relative;
     top: 450px;

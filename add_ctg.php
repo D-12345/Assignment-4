@@ -1,3 +1,38 @@
+<?php
+//INSERT INTO `category` (`s.no.`, `Name`) VALUES ('1', 'Cricket');
+$servername = "localhost";
+$username = "root";
+$password = "";
+$database = "crud";
+
+// Create connection
+$conn = mysqli_connect($servername, $username, $password, $database);
+
+// Check connection
+if (!$conn) {
+  die("Connection failed: " . mysqli_connect_error());
+}
+/*echo $_SERVER['REQUEST_METHOD'];
+if ($_SERVER['REQUEST_METHOD'] == 'POST'){
+    $Name = $_POST["Name"];
+
+    $sql = "INSERT INTO `category` (`Name`) VALUES (`$Name`)";
+    $result = mysqli_query($conn, $sql);
+    
+
+    if ($result){
+        echo "The record has been inserted successfully...<br>";
+    }
+    else{
+        echo "The record was not inserted successfully because of this error -->". mysqli_error($conn);
+    }
+    
+
+}*/
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,7 +40,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>iSportsInfo</title>
-    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="main1.css">
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -24,14 +59,24 @@
             </div>
         </header>
         <div class="banner-area">
-            <h2>Manage Categories..</h2>
+            <h2>Add Categories..</h2>
         </div>
-        <section class="content-area">
-            <h2>Content area</h2>
-        </section>
-
+        <form action="index.php" method="POST">
+            <div class="form-box">
+                <h1>Category Name</h1>
+                <div class="input-box">
+                    <input type="text" name="Name" placeholder="Category name">
+                </div>
+                <br><hr>
+    
+                <button type="submit" class="save-btn">Save</button>
+    
+            </div>
+        </form>
+        
+        <!--
         <footer>
-            <div class="main-content">
+            <div class="main-content">>
                 <div class="left box">
                     <h2>About Us</h2>
                     <div class="content">
@@ -87,7 +132,7 @@
             <div class="cpy">
                 <p>Created By @iSportsInfo |  ©2021 All Rights Reserved.</p>
             </div>
-        </footer>
+        </footer>-->
     </div>
 </body>
 </html>
