@@ -1,5 +1,7 @@
 <?php
 //INSERT INTO `category` (`s.no.`, `Name`) VALUES ('1', 'Cricket');
+$insert = false;
+
 $servername = "localhost";
 $username = "root";
 $password = "";
@@ -13,7 +15,7 @@ if (!$conn) {
   die("Connection failed: " . mysqli_connect_error());
 }
 
-echo $_SERVER['REQUEST_METHOD'];
+
 if ($_SERVER['REQUEST_METHOD'] == 'POST'){
     $Name = $_POST["Name"];
 
@@ -23,6 +25,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 
     if($result){
         echo "The record has been inserted successfully...<br>";
+        //$insert = true;
     }
     else{
         echo "The record was not inserted successfully because of this error -->". mysqli_error($conn);
@@ -46,6 +49,18 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+     
+    
+    <link rel="stylesheet" href="//cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css">  
+    <script src="jquery-3.6.0.min.js"></script>  
+    <script src="//cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
+    
+
+    <script>
+        $(document).ready( function () {
+        $('#myTable').DataTable();
+        } );
+    </script>
 
     <title>iSportsInfo</title>
     <link rel="stylesheet" href="main.css">
@@ -67,29 +82,25 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
                 </nav>
             </div>
         </header>
+
+        <?php
+        /*if($insert){
+            echo "<div class='alert alert-success alert-dismissible fade show' role='alert'>
+            <strong>Success!</strong> Your category has been added successfully!!!
+            <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
+          </div>";
+        }*/
+        ?>
+
         <div class="banner-area">
             <h2>Manage Categories..</h2>
         </div>
 
 
         <!--Applying CRUD-->
-        <div class="container">
-        <?php
-            /*$sql = "SELECT * FROM `category`";
-            $result = mysqli_query($conn, $sql);
-            while($row = mysqli_fetch_assoc($result)){
-                //echo var_dump($row);
-                echo $row['srno']. ". Name" . $row['Name'] ;
-                echo "<br>";
-            }*/
-            ?>
-            <div>qlwfnalndlv.,xfb</div>
-            <div>sldnvlndg</div>
-            <div>asbkj ,zb .,fmndv </div>
-            <div>qlwfnalndlv.,xfb</div>
-            
-
-            <table class="table">
+        <div class="container my-4" >
+    
+            <table class="table" id="myTable">
                 <thead>
                     <tr>
                         <th scope="col">srno</th>
@@ -101,15 +112,18 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
                     <?php
                     $sql = "SELECT * FROM `category`";
                     $result = mysqli_query($conn, $sql);
+                    $srno = 0;
                     while($row = mysqli_fetch_assoc($result)){
+                        $srno = $srno + 1;
                         echo "<tr>
-                        <th scope='row'>". $row['srno'] ."</th>
+                        <th scope='row'>". $srno ."</th>
                         <td>". $row['Name'] ."</td>
-                        <td>Actions</td>
+                        <td> <a href='/edit'>Edit</a> <a href='/del'>Delete</a> </td>
                         
                     </tr>";
                        
                     }
+                    
                     ?>
                     
                    
@@ -119,6 +133,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 
 
         </div>
+        
 
 
         <!--

@@ -60,11 +60,11 @@ nav a{
     color: rgb(243, 239, 235);
 }
 .container{
-    margin-top: 200px;
+    
     width: 100%;
     position: relative;
-    top: 450px;
-    height: 1500px;
+    top: 250px;
+    height: 1000px;
 }
 
 /* Footer */

@@ -42,6 +42,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
     <title>iSportsInfo</title>
     <link rel="stylesheet" href="main1.css">
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <script src="validate.js"></script>
 </head>
 <body>
     <div class="box-area">
@@ -61,11 +62,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
         <div class="banner-area">
             <h2>Add Categories..</h2>
         </div>
-        <form action="index.php" method="POST">
+        <form action="index.php"  onsubmit="return validateform()" method="POST">
             <div class="form-box">
                 <h1>Category Name</h1>
                 <div class="input-box">
-                    <input type="text" name="Name" placeholder="Category name">
+                    <input type="text" name="Name" id="name" onblur="validatename()"  placeholder="Category name"><br>
+                    <span id="err1"></span>
                 </div>
                 <br><hr>
     
