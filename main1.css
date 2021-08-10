@@ -59,13 +59,19 @@ nav a{
     font-family: sans-serif;
     color: rgb(243, 239, 235);
 }
+
+/* content area */
 .content-area{
     width: 100%;
     position: relative;
     top: 450px;
-    height: 1500px;
+    height: auto;
 }
-
+.content-area .addbox{
+    width: 70%;
+    height: 300px;
+    border: 1px solid black;
+}
 /* Footer */
 
 footer{
