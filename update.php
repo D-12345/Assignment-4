@@ -74,7 +74,7 @@ if(isset($_POST['Name'])){
                 echo '</div>';
                 echo '<br><hr>'
                 ?>
-                <button type="submit" name="submit" class="save-btn">Save</button>
+                <button type="submit" name="submit" class="save-btn">Update</button>
     
             <?php
             echo '</div>';
