@@ -2,9 +2,7 @@
     margin: 0;
     padding: 0;;
 }
-body{
-    text-align: center;
-}
+
 .wrapper{
     width: 1170px;
     margin: 0 auto;
@@ -56,25 +54,60 @@ nav a{
 .banner-area h2{
     padding-top: 6%;
     font-size: 50px;
+    text-align: center;
     font-family: sans-serif;
     color: rgb(243, 239, 235);
 }
-.container{
-    
-    width: 100%;
-    position: relative;
-    top: 250px;
-    height: 1000px;
+
+/* content area */
+
+.form-box{
+    width: 700px;
+    margin: 12% auto;
+    padding: 50px 0;
+    border: 1px solid black;
+    border-radius: 5px;
+    height: 400px;
+
 }
-.container .crctg{
-    margin: 40px;
+h1{
+    margin-left: 65px;
+
+}
+.input-box{
+    margin:20px auto;
+    width: 80%;
     
+    padding-top: 10px;
+    padding-bottom: 5px;
+}
+.input-box input{
+    width: 60%;
+    height: 40px;
+    border-radius: 5px;
+}
+hr{
+    margin: 10px 65px;
+
+}
+.save-btn{
+    margin: 50px 230px;
+    width: 30%;
+    display: block;
+    border-radius: 10px;
+    height: 40px;
+    font-size: 20px;
+    background: black;
+    color: blanchedalmond;
+    cursor: pointer;
+    
+
 }
 
 /* Footer */
 
 footer{
-    position: fixed;
+   
     bottom: 0px;
     width: 100%;
     background: rgb(35, 35, 53);
