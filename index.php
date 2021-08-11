@@ -62,6 +62,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
         } );
     </script>
 
+   
+
     <title>iSportsInfo</title>
     <link rel="stylesheet" href="main.css">
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
@@ -118,7 +120,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
                         echo "<tr>
                         <th scope='row'>". $srno ."</th>
                         <td>". $row['Name'] ."</td>
-                        <td> <a href='/edit'>Edit</a> <a href='/del'>Delete</a> </td>
+                        <td> <a href='/edit'>Edit</a> <a href='delete.php?id=" . $row['srno'] . " '><button class='delete btn btn-sm btn-primary'>Delete</button></a> </td>
                         
                     </tr>";
                        
