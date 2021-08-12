@@ -69,7 +69,7 @@ if(isset($_POST['Name'])){
                 echo '</div>';
                 echo '<h1>Product Name</h1>';
                 echo '<div class="input-box">';
-                    echo '<input type="text" name="Name" value="'.$row['pName'].'" id="name"   placeholder="Category name"><br>';
+                    echo '<input type="text" name="Name" value="'.$row['pName'].'" id="name" onblur="validatename()"  placeholder="Category name"><br>';
                     echo '<span id="err1"></span>';
                 echo '</div>';
                 
@@ -77,13 +77,13 @@ if(isset($_POST['Name'])){
                 echo '<br>';
                 echo '<h1>Product Price</h1>
                 <div class="input-box">
-                    <input type="text" name="price" id="price" value="'.$row['pPrice'].'" onblur="validatename()"  placeholder="Product price"><br>
+                    <input type="text" name="price" id="price" value="'.$row['pPrice'].'" onblur="validateprice()"  placeholder="Product price"><br>
                     <span id="err2"></span>
                 </div>
                 <br>
                 <h1>Upload Image</h1>
                 <div class="input-box">
-                    <input type="file" name="myimg" id="myimg" value="'.$row['pimg'].'" onblur="validatename()"  placeholder="No File chosen"><br>
+                    <input type="file" name="myimg" id="myimg" value="'.$row['pimg'].'" onblur="validateimg()"  placeholder="No File chosen"><br>
                     <span id="err3"></span>
                 </div>
                 <br>

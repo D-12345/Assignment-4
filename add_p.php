@@ -63,7 +63,7 @@ if (!$conn) {
                 <br>
                 <h1>Upload Image</h1>
                 <div class="input-box">
-                    <input type="file" name="myimg" id="myimg" onblur="validatename()"  placeholder="No File chosen"><br>
+                    <input type="file" name="myimg" id="myimg" onblur="validateimg()"  placeholder="No File chosen"><br>
                     <span id="err3"></span>
                 </div>
                 <br>

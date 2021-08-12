@@ -86,6 +86,10 @@ h1{
     height: 40px;
     border-radius: 5px;
 }
+
+.input-box span{
+    color: red;
+}
 hr{
     margin: 10px 65px;
 
