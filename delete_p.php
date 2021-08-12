@@ -22,4 +22,4 @@ $result = mysqli_query($conn, $sql);
 
 ?>
 
-<?php header("Location: index.php")?>
+<?php header("Location: index_p.php")?>

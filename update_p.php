@@ -16,7 +16,7 @@ if (!$conn) {
 
 
 $id = $_GET['id'];
-$sql = "SELECT `Name` FROM `category` WHERE `category`.`srno` = '$id'" ;
+$sql = "SELECT * FROM `product` WHERE `product`.`srno` = '$id'" ;
 $result = mysqli_query($conn, $sql);
 $row = mysqli_fetch_assoc($result);
 /*
@@ -37,9 +37,9 @@ if(isset($_POST['Name'])){
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>iSportsInfo</title>
-    <link rel="stylesheet" href="main2.css">
+    <link rel="stylesheet" href="main2_p.css">
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-    <script src="validate.js"></script>
+    
 </head>
 <body>
     <div class="box-area">
@@ -60,7 +60,7 @@ if(isset($_POST['Name'])){
             <h2>Update Products...</h2>
         </div>
         <?php
-        echo '<form  action="edit.php?id=" onsubmit="return validateform()" method="POST">';
+        echo '<form  action="edit_p.php?id=" onsubmit="return validateform()" method="POST">';
             echo '<div class="form-box">';
                 echo '<h1>Sr.No.</h1>';
                 echo '<div class="input-box">';
@@ -69,33 +69,34 @@ if(isset($_POST['Name'])){
                 echo '</div>';
                 echo '<h1>Product Name</h1>';
                 echo '<div class="input-box">';
-                    echo '<input type="text" name="Name" value="'.$row['Name'].'" id="name"   placeholder="Category name"><br>';
+                    echo '<input type="text" name="Name" value="'.$row['pName'].'" id="name"   placeholder="Category name"><br>';
                     echo '<span id="err1"></span>';
                 echo '</div>';
                 
-                ?>
-                 <br>
-                <h1>Product Price</h1>
+                
+                echo '<br>';
+                echo '<h1>Product Price</h1>
                 <div class="input-box">
-                    <input type="text" name="price" id="price" onblur="validatename()"  placeholder="Product price"><br>
+                    <input type="text" name="price" id="price" value="'.$row['pPrice'].'" onblur="validatename()"  placeholder="Product price"><br>
                     <span id="err2"></span>
                 </div>
                 <br>
                 <h1>Upload Image</h1>
                 <div class="input-box">
-                    <input type="file" name="myimg" id="myimg" onblur="validatename()"  placeholder="No File chosen"><br>
+                    <input type="file" name="myimg" id="myimg" value="'.$row['pimg'].'" onblur="validatename()"  placeholder="No File chosen"><br>
                     <span id="err3"></span>
                 </div>
                 <br>
                 <h1>Select Category</h1>
                 <div class="input-box">
-                    <select id="categ" name="categ">
+                    <select id="categ" name="categ" value="'.$row['pCategory'].'">
                         <option>Mobile</option>
                         <option>AutoMobile</option>
                     </select><br>
                     <span id="err4"></span>
                 </div>
-                <br><hr>
+                <br><hr>';
+                ?>
                 <button type="submit" name="submit" class="save-btn">Update</button>
     
             <?php
@@ -115,7 +116,7 @@ if(isset($_POST['Name'])){
         </footer>
     </div>
 
-    <script src="validate.js"></script>
+    <script src="validate_p.js"></script>
 </body>
 </html>
 

@@ -25,7 +25,7 @@ if (!$conn) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>iSportsInfo</title>
-    <link rel="stylesheet" href="main1.css">
+    <link rel="stylesheet" href="main1_p.css">
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
     
 </head>
@@ -47,7 +47,7 @@ if (!$conn) {
         <div class="banner-area">
             <h2>Add Products..</h2>
         </div>
-        <form action="index.php"  onsubmit="return validateform()" method="POST">
+        <form action="index_p.php"  onsubmit="return validateform()" method="POST" enctype="multipart/form-data">
             <div class="form-box">
                 <h1>Product Name</h1>
                 <div class="input-box">
@@ -57,7 +57,7 @@ if (!$conn) {
                 <br>
                 <h1>Product Price</h1>
                 <div class="input-box">
-                    <input type="text" name="price" id="price" onblur="validatename()"  placeholder="Product price"><br>
+                    <input type="text" name="price" id="price" onblur="validateprice()"  placeholder="Product price"><br>
                     <span id="err2"></span>
                 </div>
                 <br>
@@ -95,6 +95,6 @@ if (!$conn) {
         </footer>
     </div>
 
-    <script src="validate.js"></script>
+    <script src="validate_p.js"></script>
 </body>
 </html>

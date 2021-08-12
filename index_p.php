@@ -19,7 +19,7 @@ if (!$conn) {
 if ($_SERVER['REQUEST_METHOD'] == 'POST'){
     $Name = $_POST["Name"];
     $price = $_POST["price"];
-    $myimg = $_POST["myimg"];
+    $myimg = $_FILES["myimg"]['name'];
     $categ = $_POST["categ"];
 
 
@@ -28,8 +28,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
     
 
     if($result){
-        echo "The record has been inserted successfully...<br>";
-        //$insert = true;
+        move_uploaded_file($_FILES["myimg"]["name"] , /*"upload/"*/$_FILES["myimg"]["name"]);
+        $_SESSION['success'] = "product added";
+        //echo "The record has been inserted successfully...<br>";
+        
     }
     else{
         echo "The record was not inserted successfully because of this error -->". mysqli_error($conn);
@@ -70,7 +72,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
    
 
     <title>iSportsInfo</title>
-    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="main_p.css">
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 
@@ -102,7 +104,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
         <div class="container my-4" >
 
             <div id="crctg">
-                <a href="add_ctg.php"><button class='add btn btn-sm btn-primary'>Create Product</button></a>
+                <a href="add_p.php"><button class='add btn btn-sm btn-primary'>Create Product</button></a>
             </div>
     
     
@@ -128,10 +130,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
                         <th scope='row'>". $srno ."</th>
                         <td>". $row['pName'] ."</td>
                         <td>". $row['pPrice'] ."</td>
-                        <td>". $row['pimg'] ."</td>
-                        <td>". $row['pCategory'] ."</td>
-                        <td> <a href='update.php?id=" . $row['srno'] . " '><button class='edit btn btn-sm btn-primary'>Edit</button></a> 
-                        <a href='delete.php?id=" . $row['srno'] . " '><button class='delete btn btn-sm btn-primary'>Delete</button></a> </td>
+                        <td> <img src=". $row['pimg'] . " width='100px' height='100px'  alt='Product Image' >  </td> 
+                        <td>  ". $row['pCategory']." </td>   
+                        <td> <a href='update_p.php?id=" . $row['srno'] . " '><button class='edit btn btn-sm btn-primary'>Edit</button></a> 
+                        <a href='delete_p.php?id=" . $row['srno'] . " '><button class='delete btn btn-sm btn-primary'>Delete</button></a> </td>
                         
                     </tr>";
                        

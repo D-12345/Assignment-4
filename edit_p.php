@@ -15,14 +15,17 @@ if (!$conn) {
 }
 
 $srn = $_POST['srn'];
-$Name = $_POST['Name'];
+$pName = $_POST['Name'];
+$price = $_POST['price'];
+$myimg = $_POST['myimg'];
+$categ = $_POST['categ'];
     
 
-$sql = "UPDATE `category` SET  `Name` = '$Name' WHERE `category`.`srno` = '$srn'";
+$sql = "UPDATE `product` SET `pName` = '$pName', `pPrice` = '$price', `pimg` = '$myimg', `pCategory` = '$categ' WHERE `product`.`srno` = '$srn'";
 $result = mysqli_query($conn, $sql);
 
 
 
-    header("Location: index.php")
+    header("Location: index_p.php")
 
 ?>
