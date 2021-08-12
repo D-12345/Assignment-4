@@ -16,7 +16,8 @@ if (!$conn) {
 }
 
 $id = $_GET['id'];
-$sql =  "DELETE FROM `category` WHERE `category`.`srno` = '$id'";
+
+$sql = "DELETE FROM `product` WHERE `product`.`srno` = '$id'";
 $result = mysqli_query($conn, $sql);
 
 ?>

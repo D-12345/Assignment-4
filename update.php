@@ -57,7 +57,7 @@ if(isset($_POST['Name'])){
             </div>
         </header>
         <div class="banner-area">
-            <h2>Add Categories..</h2>
+            <h2>Update Products...</h2>
         </div>
         <?php
         echo '<form  action="edit.php?id=" onsubmit="return validateform()" method="POST">';
@@ -67,13 +67,35 @@ if(isset($_POST['Name'])){
                     echo '<input type="number" name="srn" value="'.$id.'" id="srn"  ><br>';
                     
                 echo '</div>';
-                echo '<h1>Category Name</h1>';
+                echo '<h1>Product Name</h1>';
                 echo '<div class="input-box">';
                     echo '<input type="text" name="Name" value="'.$row['Name'].'" id="name"   placeholder="Category name"><br>';
                     echo '<span id="err1"></span>';
                 echo '</div>';
-                echo '<br><hr>'
+                
                 ?>
+                 <br>
+                <h1>Product Price</h1>
+                <div class="input-box">
+                    <input type="text" name="price" id="price" onblur="validatename()"  placeholder="Product price"><br>
+                    <span id="err2"></span>
+                </div>
+                <br>
+                <h1>Upload Image</h1>
+                <div class="input-box">
+                    <input type="file" name="myimg" id="myimg" onblur="validatename()"  placeholder="No File chosen"><br>
+                    <span id="err3"></span>
+                </div>
+                <br>
+                <h1>Select Category</h1>
+                <div class="input-box">
+                    <select id="categ" name="categ">
+                        <option>Mobile</option>
+                        <option>AutoMobile</option>
+                    </select><br>
+                    <span id="err4"></span>
+                </div>
+                <br><hr>
                 <button type="submit" name="submit" class="save-btn">Update</button>
     
             <?php

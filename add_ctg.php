@@ -45,14 +45,35 @@ if (!$conn) {
             </div>
         </header>
         <div class="banner-area">
-            <h2>Add Categories..</h2>
+            <h2>Add Products..</h2>
         </div>
         <form action="index.php"  onsubmit="return validateform()" method="POST">
             <div class="form-box">
-                <h1>Category Name</h1>
+                <h1>Product Name</h1>
                 <div class="input-box">
-                    <input type="text" name="Name" id="name" onblur="validatename()"  placeholder="Category name"><br>
+                    <input type="text" name="Name" id="name" onblur="validatename()"  placeholder="Product name"><br>
                     <span id="err1"></span>
+                </div>
+                <br>
+                <h1>Product Price</h1>
+                <div class="input-box">
+                    <input type="text" name="price" id="price" onblur="validatename()"  placeholder="Product price"><br>
+                    <span id="err2"></span>
+                </div>
+                <br>
+                <h1>Upload Image</h1>
+                <div class="input-box">
+                    <input type="file" name="myimg" id="myimg" onblur="validatename()"  placeholder="No File chosen"><br>
+                    <span id="err3"></span>
+                </div>
+                <br>
+                <h1>Select Category</h1>
+                <div class="input-box">
+                    <select id="categ" name="categ">
+                        <option>Mobile</option>
+                        <option>AutoMobile</option>
+                    </select><br>
+                    <span id="err4"></span>
                 </div>
                 <br><hr>
     

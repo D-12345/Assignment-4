@@ -18,8 +18,12 @@ if (!$conn) {
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST'){
     $Name = $_POST["Name"];
+    $price = $_POST["price"];
+    $myimg = $_POST["myimg"];
+    $categ = $_POST["categ"];
 
-    $sql = "INSERT INTO `category` (`Name`) VALUES ('$Name')";
+
+    $sql = "INSERT INTO `product` (`pName`, `pPrice`, `pimg`, `pCategory`) VALUES ('$Name', '$price', '$myimg', '$categ')";
     $result = mysqli_query($conn, $sql);
     
 
@@ -33,6 +37,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
     
 
 }
+
 
 ?>
 
@@ -97,7 +102,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
         <div class="container my-4" >
 
             <div id="crctg">
-                <a href="add_ctg.php"><button class='add btn btn-sm btn-primary'>Create Category</button></a>
+                <a href="add_ctg.php"><button class='add btn btn-sm btn-primary'>Create Product</button></a>
             </div>
     
     
@@ -105,20 +110,26 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
                 <thead>
                     <tr>
                         <th scope="col">srno</th>
-                        <th scope="col">Name</th>
+                        <th scope="col">Product Name</th>
+                        <th scope="col">Product Price</th>
+                        <th scope="col">Product Image</th>
+                        <th scope="col">Product Category</th>
                         <th scope="col">Actions</th>
                     </tr>
                 </thead>
                 <tbody>
                     <?php
-                    $sql = "SELECT * FROM `category`";
+                    $sql = "SELECT * FROM `product`";
                     $result = mysqli_query($conn, $sql);
                     $srno = 0;
                     while($row = mysqli_fetch_assoc($result)){
                         $srno = $srno + 1;
                         echo "<tr>
                         <th scope='row'>". $srno ."</th>
-                        <td>". $row['Name'] ."</td>
+                        <td>". $row['pName'] ."</td>
+                        <td>". $row['pPrice'] ."</td>
+                        <td>". $row['pimg'] ."</td>
+                        <td>". $row['pCategory'] ."</td>
                         <td> <a href='update.php?id=" . $row['srno'] . " '><button class='edit btn btn-sm btn-primary'>Edit</button></a> 
                         <a href='delete.php?id=" . $row['srno'] . " '><button class='delete btn btn-sm btn-primary'>Delete</button></a> </td>
                         
