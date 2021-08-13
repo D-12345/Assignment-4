@@ -1,0 +1,141 @@
+*{
+    margin: 0;
+    padding: 0;;
+}
+
+.wrapper{
+    width: 1170px;
+    margin: 0 auto;
+}
+header{
+    height: 100px;
+    background: rgb(11, 37, 53);
+    width:100%;
+    z-index: 2;
+    position: fixed;
+
+}
+.logo{
+    width: 30%;
+    float: left;
+    line-height: 100px;
+}
+.logo a{
+    text-decoration: none;
+    font-size: 30px;
+    font-family: cursive;
+    color: ghostwhite;
+    letter-spacing: 3px;
+}
+nav{
+    float: right;
+    line-height: 100px;
+}
+nav a{
+    text-decoration: none;
+    font-family: sans-serif;
+    letter-spacing: 1px;
+    font-size: 20px;
+    margin: 0 12px;
+    color:ghostwhite;
+}
+
+/* Title banner */
+
+.banner-area{
+    width: 100%;
+    height: 200px;
+    position: relative;
+    top: 100px;
+    background-image: url(img2.jpg);
+    background-size: cover;
+    background-position: center;
+}
+.banner-area h2{
+    padding-top: 6%;
+    font-size: 50px;
+    text-align: center;
+    font-family: sans-serif;
+    color: rgb(243, 239, 235);
+}
+
+/* content area */
+
+.form-box{
+    width: 700px;
+    margin: 12% auto;
+    padding: 50px 0;
+    border: 1px solid black;
+    border-radius: 5px;
+    height: 800px;
+
+}
+h1{
+    margin-left: 65px;
+
+}
+.input-box{
+    margin:20px auto;
+    width: 80%;
+    
+    padding-top: 10px;
+    padding-bottom: 5px;
+}
+.input-box input{
+    width: 60%;
+    height: 40px;
+    border-radius: 5px;
+}
+
+.input-box span{
+    color: red;
+}
+hr{
+    margin: 10px 65px;
+
+}
+
+#myimg{
+    border: 1px solid black;
+    padding: 10px 10px 0 10px;
+    
+}
+
+#categ{
+    width: 50%;
+    height: 40px;
+    border-radius: 5px;
+}
+
+.save-btn{
+    margin: 50px 230px;
+    width: 30%;
+    display: block;
+    border-radius: 10px;
+    height: 40px;
+    font-size: 20px;
+    background: black;
+    color: blanchedalmond;
+    cursor: pointer;
+    
+
+}
+
+/* Footer */
+
+footer{
+   
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+    height: 50px;
+    background: rgb(35, 35, 53);
+}
+
+.cpy{
+    text-align: center;
+    color: white;
+    margin: 5px;
+    padding: 5px;
+    font-family: sans-serif;
+}
