@@ -16,18 +16,13 @@ if (!$conn) {
 
 
 $id = $_GET['id'];
-$sql = "SELECT * FROM `product` WHERE `product`.`srno` = '$id'" ;
+$sql = "SELECT * FROM `product` WHERE `product`.`psrno` = '$id'" ;
 $result = mysqli_query($conn, $sql);
 $row = mysqli_fetch_assoc($result);
-/*
-if(isset($_POST['Name'])){
-    $name = $_POST['Name'];
-    $sql = "UPDATE `category` SET  `Name` = '$name' WHERE `category`.`srno` = '$id'";
-    $result = mysqli_query($conn, $sql);
-}*/
+
 
 ?>
-<?/*php header("Location: index.php")*/?>
+
 
 
 <!DOCTYPE html>
@@ -49,9 +44,10 @@ if(isset($_POST['Name'])){
                     <a href="#">iSportsInfo</a>
                 </div>
                 <nav>
-                    <a href="#">Home</a>
+                    <a href="index.php">Home</a>
                     <a href="#">About Us</a>
                     <a href="#">Sports Blog</a>
+                    <a href="index_p.php">Products</a>
                     <a href="#">Contact Us</a>
                 </nav>
             </div>
@@ -89,11 +85,15 @@ if(isset($_POST['Name'])){
                 <br>
                 <h1>Select Category</h1>
                 <div class="input-box">
-                    <select id="categ" name="categ" value="'.$row['pCategory'].'">
-                        <option>Mobile</option>
-                        <option>AutoMobile</option>
+                    <select id="categ" name="categ" 
+                        <option value="select">--select--</option>
+                        
+                        <option>Cricket</option>
+                        <option>Football</option>
+                        <option>Athletics</option>
                     </select><br>
                     <span id="err4"></span>
+                    
                 </div>
                 <br><hr>';
                 ?>

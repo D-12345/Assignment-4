@@ -18,14 +18,11 @@ if (!$conn) {
 if ($_SERVER['REQUEST_METHOD'] == 'POST'){
     $Name = $_POST["Name"];
     $price = $_POST["price"];
-    $myimg = $_FILES["myimg"]['name'];
+    $myimg = $_FILES["myimg"]["name"];
     $categ = $_POST["categ"];
-
-    $tgt = "./upload/".$myimg;
-    $tgt1 = "upload/".$myimg;
-
-    move_uploaded_file($_FILES["myimg"]["tmp-name"] ,  $tgt);
-    $sql = "INSERT INTO `product` (`pName`, `pPrice`, `pimg`, `pCategory`) VALUES ('$Name', '$price', '$tgt1', '$categ')";
+    
+    
+    $sql = "INSERT INTO `product` (`pName`, `pPrice`, `pimg`, `pCategory`) VALUES ('$Name', '$price', '$myimg', '$categ')";
     $result = mysqli_query($conn, $sql);
     
 
@@ -83,9 +80,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
                     <a href="#">iSportsInfo</a>
                 </div>
                 <nav>
-                    <a href="#">Home</a>
+                    <a href="index.php">Home</a>
                     <a href="#">About Us</a>
                     <a href="#">Sports Blog</a>
+                    <a href="index_p.php">Products</a>
                     <a href="#">Contact Us</a>
                 </nav>
             </div>
@@ -129,10 +127,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
                         <th scope='row'>". $srno ."</th>
                         <td>". $row['pName'] ."</td>
                         <td>". $row['pPrice'] ."</td>
-                        <td> <img src=". $row['pimg'] . " width='100px' height='100px'  alt='Product Image' >  </td> 
+                        <td> <img src='http://localhost/Assignment%204/images/". $row['pimg'] ." ' width='100px' height='100px'  alt='Product Image' >  </td> 
                         <td>  ". $row['pCategory']." </td>   
-                        <td> <a href='update_p.php?id=" . $row['srno'] . " '><button class='edit btn btn-sm btn-primary'>Edit</button></a> 
-                        <a href='delete_p.php?id=" . $row['srno'] . " '><button class='delete btn btn-sm btn-primary'>Delete</button></a> </td>
+                        <td> <a href='update_p.php?id=" . $row['psrno'] . " '><button class='edit btn btn-sm btn-primary'>Edit</button></a> 
+                        <a href='delete_p.php?id=" . $row['psrno'] . " '><button class='delete btn btn-sm btn-primary'>Delete</button></a> </td>
                         
                     </tr>";
                        

@@ -39,7 +39,7 @@ if(isset($_POST['Name'])){
     <title>iSportsInfo</title>
     <link rel="stylesheet" href="main2.css">
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-    <script src="validate.js"></script>
+    
 </head>
 <body>
     <div class="box-area">
@@ -49,9 +49,10 @@ if(isset($_POST['Name'])){
                     <a href="#">iSportsInfo</a>
                 </div>
                 <nav>
-                    <a href="#">Home</a>
+                    <a href="index.php">Home</a>
                     <a href="#">About Us</a>
                     <a href="#">Sports Blog</a>
+                    <a href="index_p.php">Products</a>
                     <a href="#">Contact Us</a>
                 </nav>
             </div>
@@ -69,7 +70,7 @@ if(isset($_POST['Name'])){
                 echo '</div>';
                 echo '<h1>Category Name</h1>';
                 echo '<div class="input-box">';
-                    echo '<input type="text" name="Name" value="'.$row['Name'].'" id="name"   placeholder="Category name"><br>';
+                    echo '<input type="text" name="Name" onblur="validatename()" value="'.$row['Name'].'" id="name"   placeholder="Category name"><br>';
                     echo '<span id="err1"></span>';
                 echo '</div>';
                 echo '<br><hr>'

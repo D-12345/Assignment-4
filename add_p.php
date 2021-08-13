@@ -13,7 +13,11 @@ if (!$conn) {
   die("Connection failed: " . mysqli_connect_error());
 }
 
-
+ 
+$sql = "SELECT * FROM `category`";
+$result = mysqli_query($conn, $sql);
+            
+        
 
 ?>
 
@@ -37,9 +41,10 @@ if (!$conn) {
                     <a href="#">iSportsInfo</a>
                 </div>
                 <nav>
-                    <a href="#">Home</a>
+                    <a href="index.php">Home</a>
                     <a href="#">About Us</a>
                     <a href="#">Sports Blog</a>
+                    <a href="index_p.php">Products</a>
                     <a href="#">Contact Us</a>
                 </nav>
             </div>
@@ -70,8 +75,15 @@ if (!$conn) {
                 <h1>Select Category</h1>
                 <div class="input-box">
                     <select id="categ" name="categ">
-                        <option>Mobile</option>
-                        <option>AutoMobile</option>
+                        <option value="select">--select--</option>
+                        <?php 
+                            while($row = mysqli_fetch_assoc($result)){
+                                echo "<option value='".$row["Name"]."'>".$row["Name"]."</option>";
+                            }
+                        ?>
+                        <!--<option>Cricket</option>
+                        <option>Football</option>
+                        <option>Athletics</option>-->
                     </select><br>
                     <span id="err4"></span>
                 </div>

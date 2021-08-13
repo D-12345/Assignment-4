@@ -1,7 +1,5 @@
 <?php
-
-$insert = false;
-
+//INSERT INTO `category` (`s.no.`, `Name`) VALUES ('1', 'Cricket');
 $servername = "localhost";
 $username = "root";
 $password = "";
@@ -15,11 +13,11 @@ if (!$conn) {
   die("Connection failed: " . mysqli_connect_error());
 }
 
-$id = $_GET['id'];
 
-$sql = "DELETE FROM `product` WHERE `product`.`psrno` = '$id'";
+
+$id = $_GET['id'];
+$sql = "SELECT * FROM `product` WHERE `product`.`srno` = '$id'" ;
 $result = mysqli_query($conn, $sql);
+$prod = mysqli_fetch_assoc($result);
 
 ?>
-
-<?php header("Location: index_p.php")?>

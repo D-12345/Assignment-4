@@ -37,9 +37,10 @@ if (!$conn) {
                     <a href="#">iSportsInfo</a>
                 </div>
                 <nav>
-                    <a href="#">Home</a>
+                    <a href="index.php">Home</a>
                     <a href="#">About Us</a>
                     <a href="#">Sports Blog</a>
+                    <a href="index_p.php">Products</a>
                     <a href="#">Contact Us</a>
                 </nav>
             </div>
