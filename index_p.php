@@ -15,23 +15,22 @@ if (!$conn) {
   die("Connection failed: " . mysqli_connect_error());
 }
 
-
 if ($_SERVER['REQUEST_METHOD'] == 'POST'){
     $Name = $_POST["Name"];
     $price = $_POST["price"];
     $myimg = $_FILES["myimg"]['name'];
     $categ = $_POST["categ"];
 
+    $tgt = "./upload/".$myimg;
+    $tgt1 = "upload/".$myimg;
 
-    $sql = "INSERT INTO `product` (`pName`, `pPrice`, `pimg`, `pCategory`) VALUES ('$Name', '$price', '$myimg', '$categ')";
+    move_uploaded_file($_FILES["myimg"]["tmp-name"] ,  $tgt);
+    $sql = "INSERT INTO `product` (`pName`, `pPrice`, `pimg`, `pCategory`) VALUES ('$Name', '$price', '$tgt1', '$categ')";
     $result = mysqli_query($conn, $sql);
     
 
     if($result){
-        move_uploaded_file($_FILES["myimg"]["name"] , /*"upload/"*/$_FILES["myimg"]["name"]);
-        $_SESSION['success'] = "product added";
-        //echo "The record has been inserted successfully...<br>";
-        
+        echo "The record has been inserted successfully...<br>";   
     }
     else{
         echo "The record was not inserted successfully because of this error -->". mysqli_error($conn);
@@ -95,7 +94,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
        
 
         <div class="banner-area">
-            <h2>Manage Categories..</h2>
+            <h2>Manage Products..</h2>
         </div>
 
        
